@@ -3,33 +3,25 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 		<script src="javascript.js"></script>
 	</head>
-
 	<body ng-app="pag" ng-controller = "botao">
-		
-
 		<div ng-repeat = "fig in figuras">
-
 			<select ng-model = "fig.tipo" ng-change = "fig.atualizar(fig.tipo)" >
 				<option  Ng-repeat = "x in name"  >{{x}}</option>
 			</select >
-			<div ng-repeat = "ponto in fig.pontos">
-				
+			<div ng-repeat = "ponto in fig.pontos">	
 				Coordenada X Inicial: <input type = "text" ng-model="ponto.xi" ng-change = "PrintaPonto()" size = "5">
 				Coordenada Y Inicial: <input type = "text" ng-model="ponto.yi" ng-change = "PrintaPonto()" size = "5">
                      		Coordenada X Final: <input type = "text" ng-model="ponto.xf" ng-change = "PrintaPonto()" size = "5">
                      		Coordenada Y Final: <input type = "text" ng-model="ponto.yf" ng-change = "PrintaPonto()" size = "5">
- 				
                 	</div>
-
-              		 <button ng-hide = "fig.b" ng-click="fig.addPonto()" >Adicionar Ponto</button>	
+              		<button ng-hide = "fig.b" ng-click="fig.addPonto()" >Adicionar Ponto</button>	
 		</div>
 		<div>
-			 <button  ng-click="CriarFigura()" >Adicionar Figura</button>
+			<button  ng-click="CriarFigura()" >Adicionar Figura</button>
 		</div>	
-          	<div >
-            		 <center><canvas id="myCanvas" width="200" height="200" style="border:1px solid #000000;"></canvas></center>
+          	<div>
+            		<center><canvas id="myCanvas" width="200" height="200" style="border:1px solid #000000;"></canvas></center>
          	</div>
 		 <br>Total de figuras:{{y}}<br>
-		 
 	</body>
 </html>
