@@ -28,12 +28,9 @@ class Figura {
 			
 		}else if(this.tipo == "Circulo"){
 			this.pontos.push(new Ponto());
-                	
 		}	
 	}     	 
 }
-
-
 
 var pag = angular.module('pag', []);
 pag.controller('botao',function($scope){
@@ -54,29 +51,24 @@ pag.controller('botao',function($scope){
 			ctx.stroke();
 		}
         } 
-
 	$scope.PrintaPonto = function(){
 			ctx.clearRect(0,0,canvas.width,canvas.height);
 			$scope.y = $scope.figuras.length;
 			var n = 0;
 			var p = 0;
-			
 			while(n < $scope.figuras.length){
 				while(p < $scope.figuras[n].pontos.length){
 					$scope.retas($scope.figuras[n].pontos[p].xi,$scope.figuras[n].pontos[p].yi,$scope.figuras[n].pontos[p].xf,$scope.figuras[n].pontos[p].yf,$scope.figuras[n].tipo);
 					p++;
 				}
-					
 				p = 0;
 				n++;
 			}
-			
 	}
 	$scope.CriarFigura = function(){
 		var f1 = new Figura();	
 		$scope.figuras.push(f1);
 	}
-	
 });
 	
 	
